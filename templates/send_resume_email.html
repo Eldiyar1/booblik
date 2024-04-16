@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Получено Резюме</h1>
+    <p>Уважаемый(ая) HR,</p>
+    <p>Было получено следующее резюме:</p>
+    <p><strong>Фамилия и Имя:</strong> {{ full_name }}</p>
+    <p><strong>Номер телефона:</strong> {{ phone_number }}</p>
+    <p><strong>Адрес электронной почты:</strong> {{ email }}</p>
+    <p>Вы можете найти файл с резюме вложенным ниже:</p>
+{% endblock %}

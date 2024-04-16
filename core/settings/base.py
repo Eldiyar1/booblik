@@ -19,6 +19,7 @@ DJANGO_APPS = [
 THEME_APPS = ["jazzmin"]
 
 LIBRARY_APPS = [
+    "modeltranslation",
     "rest_framework",
     "corsheaders",
     "django_filters",

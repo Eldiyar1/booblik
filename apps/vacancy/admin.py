@@ -7,3 +7,15 @@ class VacancyAdmin(admin.ModelAdmin):
     list_display = ('title', 'phone_number', 'address')
     list_filter = ('address',)
     search_fields = ('title', 'description', 'address')
+    fieldsets = [
+        ('Русский перевод', {
+            'fields': ['title', 'description', 'phone_number', 'address']
+        }),
+        ('Кыргызский перевод', {
+            'fields': ['title_ky', 'description_ky', 'phone_number_ky', 'address_ky']
+        }),
+        ('Английский перевод', {
+            'fields': ['title_en', 'description_en', 'phone_number_en', 'address_en']
+        }),
+    ]
+

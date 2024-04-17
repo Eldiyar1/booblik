@@ -17,10 +17,10 @@ class LocationAdmin(admin.ModelAdmin):
             'fields': ['address', 'phone_number', 'whatsapp_number', 'latitude', 'longitude', 'logo']
         })
         , ('Кыргызский перевод', {
-            'fields': ['address_ky', 'phone_number_ky', 'whatsapp_number_ky', 'latitude_ky', 'longitude_ky', 'logo_ky']
+            'fields': ['address_ky']
         })
         , ('Английский перевод', {
-            'fields': ['address_en', 'phone_number_en', 'whatsapp_number_en', 'latitude_en', 'longitude_en', 'logo_en']
+            'fields': ['address_en']
         })
     ]
 

@@ -27,9 +27,9 @@ class EventAdmin(admin.ModelAdmin):
             'fields': ['event_type', 'title', 'content', 'image', 'publish_at', 'is_published']
         })
         , ('Кыргызский перевод', {
-            'fields': ['event_type_ky', 'title_ky', 'content_ky', 'image_ky', 'publish_at_ky', 'is_published_ky']
+            'fields': ['title_ky', 'content_ky']
         })
         , ('Английский перевод', {
-            'fields': ['event_type_en', 'title_en', 'content_en', 'image_en', 'publish_at_en', 'is_published_en']
+            'fields': ['title_en', 'content_en']
         })
     ]

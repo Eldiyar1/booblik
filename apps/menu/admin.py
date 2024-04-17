@@ -28,9 +28,9 @@ class ProductAdmin(admin.ModelAdmin):
             'fields': ['name', 'description', 'price', 'calories', 'proteins', 'fats', 'carbohydrates']
         })
         , ('Кыргызский перевод', {
-            'fields': ['name_ky', 'description_ky', 'price_ky', 'calories_ky', 'proteins_ky', 'fats_ky', 'carbohydrates_ky']
+            'fields': ['name_ky', 'description_ky']
         })
         , ('Английский перевод', {
-            'fields': ['name_en', 'description_en', 'price_en', 'calories_en', 'proteins_en', 'fats_en', 'carbohydrates_en']
+            'fields': ['name_en', 'description_en']
         })
     ]

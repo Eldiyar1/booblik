@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -5,12 +6,15 @@ from apps.geolocation.constants import DAY_CHOICES
 
 
 class Location(models.Model):
-    logo = models.ImageField(upload_to='logos/', verbose_name="Логотип")
+    logo = models.ImageField(
+        upload_to='logos/',
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
+        verbose_name="Логотип")
     address = models.CharField(max_length=255, verbose_name="Адрес")
     phone_number = PhoneNumberField(verbose_name="Номер телефона")
     whatsapp_number = models.URLField(verbose_name="Ссылка на WhatsApp")
-    latitude = models.FloatField(null=True, blank=True, verbose_name="Широта")
-    longitude = models.FloatField(null=True, blank=True, verbose_name="Долгота")
+    latitude = models.FloatField(verbose_name="Широта")
+    longitude = models.FloatField(verbose_name="Долгота")
 
     class Meta:
         verbose_name = "Местоположение"

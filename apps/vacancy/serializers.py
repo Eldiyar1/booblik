@@ -1,7 +1,10 @@
-from django.core.validators import FileExtensionValidator, MaxLengthValidator
+from django.core.validators import FileExtensionValidator
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
+
+from .constants import GENDER_CHOICES
 from .models import Vacancy
+from .validators import validate_file_size
 from ..common.serializers import BaseSerializer
 
 
@@ -19,9 +22,13 @@ class VacancyDetailSerializer(serializers.ModelSerializer):
 
 class ResumeSerializer(BaseSerializer):
     full_name = serializers.CharField(max_length=255)
-    email = serializers.EmailField(required=False)
     phone_number = PhoneNumberField()
-    resume = serializers.FileField(validators=[
-        FileExtensionValidator(allowed_extensions=['pdf', 'doc', 'docx']),
-        MaxLengthValidator(5 * 1024 * 1024, message="Resume file is too large.")
-    ])
+    birth_date = serializers.DateField(required=False, allow_null=True, input_formats=['%d.%m.%Y'])
+    email = serializers.EmailField(required=False, allow_null=True)
+    gender = serializers.ChoiceField(choices=GENDER_CHOICES, required=False, allow_null=True)
+    resume = serializers.FileField(
+        validators=[
+            FileExtensionValidator(allowed_extensions=['pdf', 'doc', 'docx']),
+            validate_file_size
+        ]
+    )

@@ -10,9 +10,15 @@ app.config_from_object("django.conf:settings", namespace="CELERY")
 app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
-    'publish-event-every-hour': {
-        'task': 'apps.event.tasks.publish_events',
-        "schedule": crontab(minute="*/1")
+    'manage-event-every-hour': {
+        'task': 'apps.event.tasks.manage_events',
+        'schedule': crontab(minute="*/1"),
+        'args': ('publish',)
+    },
+    'remove-event-every-hour': {
+        'task': 'apps.event.tasks.manage_events',
+        'schedule': crontab(minute="*/1"),
+        'args': ('remove',)
     },
 }
 

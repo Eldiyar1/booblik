@@ -1,7 +1,9 @@
 staticfiles/*
 media/*
 static/*
+back_media/
 back_media/*
+back_static/
 back_static/*
 media/
 static/
@@ -12,6 +14,7 @@ celerybeat-schedule
 .venv/*
 venv/*
 db.sqlite3/
+db.sqlite3
 .idea/
 venv/
 *.pyc

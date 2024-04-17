@@ -23,17 +23,18 @@ class SendResumeView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            resume_content = request.FILES.get('resume').read()
-            resume_name = request.FILES.get('resume').name
-
-            email = serializer.validated_data.get('email')
+            resume_content = request.FILES.get('resume').read() if request.FILES.get('resume') else None
+            resume_name = request.FILES.get('resume').name if request.FILES.get('resume') else None
 
             send_resume_email.delay(
-                email=email,
+                email=serializer.validated_data.get('email'),
+                birth_date=serializer.validated_data.get('birth_date'),
+                gender=serializer.validated_data.get('gender'),
                 full_name=serializer.validated_data['full_name'],
                 phone_number=str(serializer.validated_data['phone_number']),
                 resume_content=resume_content,
                 resume_name=resume_name
             )
-            return Response({"message": "Resume sent successfully."}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Резюме было успешно отправлено."}, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -6,5 +6,4 @@ from apps.common.serializers import BaseSerializer
 class FeedbackSerializer(BaseSerializer):
     full_name = serializers.CharField(max_length=255)
     phone_number = PhoneNumberField()
-    email = serializers.EmailField()
-    comment = serializers.CharField(style={'base_template': 'textarea.html'})
+    comment = serializers.CharField(max_length=300, style={'base_template': 'textarea.html'})

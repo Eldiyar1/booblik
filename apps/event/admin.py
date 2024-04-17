@@ -20,5 +20,5 @@ unpublish_selected_events.short_description = "Отменить публикац
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('event_type', 'title', 'publish_at', 'is_published')
+    list_display = ('event_type', 'title', 'publish_at', 'removal_at', 'is_published')
     actions = (publish_selected_events, unpublish_selected_events)

@@ -1,17 +1,14 @@
-
-from django.utils.translation import gettext_lazy as _
-
 JAZZMIN_SETTINGS = {
     "site_title": "Booblick",
     "site_header": "Booblick",
     "site_logo_classes": "img-circle",
-    "site_brand": "Административная",
+    "site_brand": "Админ-панель",
     "welcome_sign": "Добро пожаловать в Booblick",
     "copyright": "Booblick",
     "search_model": ["auth.User"],
     "show_ui_builder": True,
     "topmenu_links": [
-        {"name": _("Home"), "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"app": "Booblick"},
         {"model": "auth.User"},
         {"name": "Support", "url": "https://t.me/elldiyar", "new_window": True},

@@ -37,4 +37,3 @@ class EmailSender:
             for name, content in attachments:
                 email_message.attach(name, content)
         email_message.send()
-

@@ -18,4 +18,3 @@ class VacancyAdmin(admin.ModelAdmin):
             'fields': ['title_en', 'description_en', 'address_en']
         }),
     ]
-

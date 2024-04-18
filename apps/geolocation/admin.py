@@ -15,11 +15,11 @@ class LocationAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Русский перевод', {
             'fields': ['address', 'phone_number', 'whatsapp_number', 'latitude', 'longitude', 'logo']
-        })
-        , ('Кыргызский перевод', {
+        }),
+        ('Кыргызский перевод', {
             'fields': ['address_ky']
-        })
-        , ('Английский перевод', {
+        }),
+        ('Английский перевод', {
             'fields': ['address_en']
         })
     ]

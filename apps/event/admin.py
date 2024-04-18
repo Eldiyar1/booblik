@@ -25,11 +25,11 @@ class EventAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Русский перевод', {
             'fields': ['event_type', 'title', 'content', 'image', 'publish_at', 'is_published']
-        })
-        , ('Кыргызский перевод', {
+        }),
+        ('Кыргызский перевод', {
             'fields': ['title_ky', 'content_ky']
-        })
-        , ('Английский перевод', {
+        }),
+        ('Английский перевод', {
             'fields': ['title_en', 'content_en']
         })
     ]

@@ -85,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = "Asia/Bishkek"
 
@@ -99,8 +99,8 @@ gettext = lambda s: s
 
 LANGUAGES = [
     ("ru", gettext("Русский")),
-    ("en", gettext("English")),
     ("ky", gettext("Кыргызча")),
+    ("en", gettext("English")),
 ]
 
 LOCALE_PATHS = [

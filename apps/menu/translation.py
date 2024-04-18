@@ -1,9 +1,11 @@
 from modeltranslation.translator import register, TranslationOptions
 from .models import Menu, Product
 
+
 @register(Menu)
 class MenuTranslationOptions(TranslationOptions):
-    fields = ('name')
+    fields = ('name',)
+
 
 @register(Product)
 class ProductTranslationOptions(TranslationOptions):

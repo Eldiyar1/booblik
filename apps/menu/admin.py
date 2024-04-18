@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Menu, Product
 
+
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ('name', 'products')
@@ -18,6 +19,7 @@ class MenuAdmin(admin.ModelAdmin):
         }),
     ]
 
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'price', 'calories', 'proteins', 'fats', 'carbohydrates')
@@ -26,11 +28,11 @@ class ProductAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Русский перевод', {
             'fields': ['name', 'description', 'price', 'calories', 'proteins', 'fats', 'carbohydrates']
-        })
-        , ('Кыргызский перевод', {
+        }),
+        ('Кыргызский перевод', {
             'fields': ['name_ky', 'description_ky']
-        })
-        , ('Английский перевод', {
+        }),
+        ('Английский перевод', {
             'fields': ['name_en', 'description_en']
         })
     ]

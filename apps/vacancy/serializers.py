@@ -5,7 +5,6 @@ from rest_framework import serializers
 from .constants import GENDER_CHOICES
 from .models import Vacancy
 from .validators import validate_file_size
-from ..common.serializers import BaseSerializer
 
 
 class VacancyListSerializer(serializers.ModelSerializer):
@@ -20,7 +19,7 @@ class VacancyDetailSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'description', 'phone_number', 'address')
 
 
-class ResumeSerializer(BaseSerializer):
+class ResumeSerializer(serializers.Serializer):
     full_name = serializers.CharField(max_length=255)
     phone_number = PhoneNumberField()
     birth_date = serializers.DateField(required=False, allow_null=True, input_formats=['%d.%m.%Y'])

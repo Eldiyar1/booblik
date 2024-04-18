@@ -1,4 +1,5 @@
 from celery import shared_task
+from django.conf import settings
 from django.template.loader import render_to_string
 
 from apps.common.email_sender import EmailSender
@@ -8,10 +9,10 @@ email_sender = EmailSender()
 
 @shared_task
 def send_resume_email(email, full_name, phone_number, resume_content, resume_name, birth_date=None, gender=None):
-    recipient_email = "mc.oks1@negmail.com"
+    recipient_email = settings.EMAIL_HOST_USER
     context = {
         'full_name': full_name,
-        'phone_number': str(phone_number),
+        'phone_number': phone_number,
         'email': email or "Не был указан",
         'birth_date': birth_date or "Не указана",
         'gender': gender or "Не указан",

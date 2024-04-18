@@ -14,7 +14,8 @@ class FeedbackAPIView(APIView):
             send_feedback_email.delay(
                 serializer.validated_data['full_name'],
                 str(serializer.validated_data['phone_number']),
-                serializer.validated_data['comment']
+                serializer.validated_data['comment'],
+                serializer.validated_data['location_id'].id
             )
             return Response({"message": "Отзыв был успешно отправлен"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

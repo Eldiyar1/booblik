@@ -36,5 +36,4 @@ class SendResumeView(APIView):
                 resume_name=resume_name
             )
             return Response({"message": "Резюме было успешно отправлено."}, status=status.HTTP_200_OK)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

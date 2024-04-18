@@ -12,5 +12,16 @@ class LocationAdmin(admin.ModelAdmin):
     list_display = ('address', 'phone_number')
     search_fields = ('address', 'phone_number')
     list_filter = ('address',)
+    fieldsets = [
+        ('Русский перевод', {
+            'fields': ['address', 'phone_number', 'whatsapp_number', 'latitude', 'longitude', 'logo']
+        })
+        , ('Кыргызский перевод', {
+            'fields': ['address_ky']
+        })
+        , ('Английский перевод', {
+            'fields': ['address_en']
+        })
+    ]
 
     inlines = [OperatingHoursInline]

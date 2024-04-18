@@ -22,3 +22,14 @@ unpublish_selected_events.short_description = "Отменить публикац
 class EventAdmin(admin.ModelAdmin):
     list_display = ('event_type', 'title', 'publish_at', 'removal_at', 'is_published')
     actions = (publish_selected_events, unpublish_selected_events)
+    fieldsets = [
+        ('Русский перевод', {
+            'fields': ['event_type', 'title', 'content', 'image', 'publish_at', 'is_published']
+        })
+        , ('Кыргызский перевод', {
+            'fields': ['title_ky', 'content_ky']
+        })
+        , ('Английский перевод', {
+            'fields': ['title_en', 'content_en']
+        })
+    ]

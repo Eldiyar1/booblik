@@ -24,7 +24,7 @@ class EventAdmin(admin.ModelAdmin):
     actions = (publish_selected_events, unpublish_selected_events)
     fieldsets = [
         ('Русский перевод', {
-            'fields': ['event_type', 'title', 'content', 'image', 'publish_at', 'is_published']
+            'fields': ['event_type', 'title', 'content', 'image', 'publish_at', 'removal_at', 'is_published']
         }),
         ('Кыргызский перевод', {
             'fields': ['title_ky', 'content_ky']

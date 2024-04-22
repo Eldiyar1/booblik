@@ -11,9 +11,10 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": env("POSTGRES_DB"),
         "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
-        "HOST": 'db',
-        "PORT": '5432',
-        "ATOMIC_REQUESTS": True,
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT', cast=int),
     }
 }
+
+CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS', cast=csv())

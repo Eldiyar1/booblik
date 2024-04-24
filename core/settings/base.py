@@ -141,6 +141,7 @@ REST_FRAMEWORK = {
 
 CELERY_BROKER_URL = env("CELERY_BROKER_URL")
 CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND")
+CELERY_BEAT_SCHEDULER = env('CELERY_BEAT_SCHEDULER')
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_BROKER_CONNECTION_RETRY = False
 CELERY_BROKER_TRANSPORT_OPTION = {"visibility_timeout": 3600}
@@ -151,7 +152,7 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://localhost:6379',
+        'LOCATION': 'redis://redis:6379',
     }
 }
 

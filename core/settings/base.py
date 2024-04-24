@@ -16,16 +16,14 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THEME_APPS = ["jazzmin"]
+THEME_APPS = ["modeltranslation", "jazzmin"]
 
 LIBRARY_APPS = [
-    "modeltranslation",
     "rest_framework",
     "corsheaders",
     "django_filters",
     "debug_toolbar",
     'drf_spectacular',
-    'drf_yasg'
 ]
 
 LOCAL_APPS = [
@@ -34,7 +32,8 @@ LOCAL_APPS = [
     "apps.geolocation.apps.GeolocationConfig",
     "apps.event.apps.EventConfig",
     "apps.vacancy.apps.VacancyConfig",
-    "apps.feedback.apps.FeedbackConfig"
+    "apps.feedback.apps.FeedbackConfig",
+    "apps.menu.apps.MenuConfig"
 ]
 
 INSTALLED_APPS = [*THEME_APPS, *DJANGO_APPS, *LIBRARY_APPS, *LOCAL_APPS]
@@ -72,18 +71,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 LANGUAGE_CODE = 'ru'
@@ -104,14 +95,6 @@ LANGUAGES = [
     ("en", gettext("English")),
 ]
 
-LOCALE_PATHS = [
-    f"{BASE_DIR}/common/locale",
-    f"{BASE_DIR}/feedback/locale",
-    f"{BASE_DIR}/geolocation/locale",
-    f"{BASE_DIR}/event/locale",
-    f"{BASE_DIR}/vacancy/locale",
-    f"{BASE_DIR}/core/locale",
-]
 
 STATIC_URL = "/back_static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "back_static")

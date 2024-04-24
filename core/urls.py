@@ -3,7 +3,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-from core.settings.swagger import swagger_urlpatterns
 
 
 urlpatterns = [
@@ -13,10 +12,11 @@ urlpatterns = [
     path("api/v1/", include("apps.feedback.urls")),
     path("api/v1/", include("apps.event.urls")),
     path("api/v1/", include("apps.contact.urls")),
+    path("api/v1/", include("apps.menu.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/v1/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='docs'),
-] + swagger_urlpatterns
+]
 
 
 if settings.DEBUG:

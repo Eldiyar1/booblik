@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 EXPOSE 8000
 
-COPY requirements.txt ./
+COPY requirements /usr/src/app/requirements
 
 COPY . .
 

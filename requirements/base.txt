@@ -17,7 +17,6 @@ django-modeltranslation==0.18.11
 django-phonenumber-field==7.3.0
 djangorestframework==3.14.0
 drf-spectacular==0.27.2
-drf-yasg==1.21.7
 flake8==7.0.0
 flower==2.0.1
 humanize==4.9.0

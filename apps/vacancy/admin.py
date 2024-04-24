@@ -12,9 +12,9 @@ class VacancyAdmin(admin.ModelAdmin):
             'fields': ['title', 'description', 'phone_number', 'address']
         }),
         ('Кыргызский перевод', {
-            'fields': ['title_ky', 'description_ky', 'address_ky']
+            'fields': ['title_ky', 'description_ky']
         }),
         ('Английский перевод', {
-            'fields': ['title_en', 'description_en', 'address_en']
+            'fields': ['title_en', 'description_en']
         }),
     ]

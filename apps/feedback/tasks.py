@@ -3,7 +3,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 
 from apps.common.email_sender import EmailSender
-from apps.geolocation.models import Location
+from apps.filial.models import Location
 
 email_sender = EmailSender()
 

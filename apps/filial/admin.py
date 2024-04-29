@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Location, OperatingHours
+from .models import Location, OperatingHours, Contact
 
 
 class OperatingHoursInline(admin.TabularInline):
@@ -13,3 +13,8 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ('address', 'phone_number')
     list_filter = ('address',)
     inlines = [OperatingHoursInline]
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('whatsapp',)

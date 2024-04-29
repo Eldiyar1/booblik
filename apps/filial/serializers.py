@@ -1,4 +1,4 @@
-from .models import Location, OperatingHours
+from .models import Location, OperatingHours, Contact
 from rest_framework import serializers
 
 
@@ -16,3 +16,9 @@ class LocationSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'logo', 'address', 'phone_number', 'whatsapp_number', 'operating_hours', 'latitude', 'longitude'
         )
+
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ('id', 'whatsapp')

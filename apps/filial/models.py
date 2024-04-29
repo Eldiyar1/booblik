@@ -1,8 +1,7 @@
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-
-from apps.geolocation.constants import DAY_CHOICES
+from apps.filial.constants import DAY_CHOICES
 
 
 class Location(models.Model):
@@ -38,3 +37,15 @@ class OperatingHours(models.Model):
     class Meta:
         verbose_name = "Часы работы"
         verbose_name_plural = "Часы работы"
+
+
+class Contact(models.Model):
+    whatsapp = models.URLField(verbose_name='WhatsApp ссылка')
+
+    class Meta:
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
+
+    def __str__(self):
+        return f'WhatsApp контакт {self.whatsapp}'
+

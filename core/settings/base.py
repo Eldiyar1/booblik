@@ -28,8 +28,7 @@ LIBRARY_APPS = [
 
 LOCAL_APPS = [
     "apps.common.apps.CommonConfig",
-    "apps.contact.apps.ContactConfig",
-    "apps.geolocation.apps.GeolocationConfig",
+    "apps.filial.apps.FilialConfig",
     "apps.event.apps.EventConfig",
     "apps.vacancy.apps.VacancyConfig",
     "apps.feedback.apps.FeedbackConfig",

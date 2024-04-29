@@ -7,11 +7,10 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/", include("apps.geolocation.urls")),
+    path("api/v1/", include("apps.filial.urls")),
     path("api/v1/", include("apps.vacancy.urls")),
     path("api/v1/", include("apps.feedback.urls")),
     path("api/v1/", include("apps.event.urls")),
-    path("api/v1/", include("apps.contact.urls")),
     path("api/v1/", include("apps.menu.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),

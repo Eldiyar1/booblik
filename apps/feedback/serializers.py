@@ -1,6 +1,6 @@
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
-from apps.geolocation.models import Location
+from apps.filial.models import Location
 
 
 class FeedbackSerializer(serializers.Serializer):

@@ -23,12 +23,12 @@ JAZZMIN_SETTINGS = {
     },
     "icons": {
         "vacancy.Vacancy": "fas fa-solid fa-briefcase",
-        "geolocation.Location": "fas fa-solid fa-map",
+        "filial.Location": "fas fa-solid fa-map",
+        "filial.Contact": "fas fa-solid fa-address-book",
         "courses.Review": "fas fa-solid fa-comment",
         "event.Event": "fas fa-solid fa-newspaper",
         "menu.Menu": "fas fa-solid fa-bars",
         "menu.Product": "fas fa-solid fa-cookie-bite",
-        "contact.Contact": "fas fa-solid fa-address-book",
         "auth.Group": "fas fa-users",
         "auth.User": "fas fa-user",
     }

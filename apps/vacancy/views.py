@@ -27,11 +27,9 @@ class SendResumeView(APIView):
             resume_name = request.FILES.get('resume').name if request.FILES.get('resume') else None
 
             send_resume_email.delay(
-                email=serializer.validated_data.get('email'),
-                birth_date=serializer.validated_data.get('birth_date'),
-                gender=serializer.validated_data.get('gender'),
                 full_name=serializer.validated_data['full_name'],
                 phone_number=str(serializer.validated_data['phone_number']),
+                birth_date=serializer.validated_data.get('birth_date'),
                 resume_content=resume_content,
                 resume_name=resume_name
             )

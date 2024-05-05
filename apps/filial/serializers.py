@@ -1,4 +1,4 @@
-from .models import Location, OperatingHours, Contact
+from .models import Filial, OperatingHours, Contact
 from rest_framework import serializers
 
 
@@ -8,11 +8,11 @@ class OperatingHoursSerializer(serializers.ModelSerializer):
         fields = ('day', 'open_time', 'close_time')
 
 
-class LocationSerializer(serializers.ModelSerializer):
+class FilialSerializer(serializers.ModelSerializer):
     operating_hours = OperatingHoursSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Location
+        model = Filial
         fields = (
             'id', 'logo', 'address', 'phone_number', 'whatsapp_number', 'operating_hours', 'latitude', 'longitude'
         )

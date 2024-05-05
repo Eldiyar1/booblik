@@ -1,16 +1,16 @@
 from rest_framework import generics
-from .models import Location, Contact
-from .serializers import LocationSerializer, ContactSerializer
+from .models import Filial, Contact
+from .serializers import FilialSerializer, ContactSerializer
 
 
-class LocationListAPIView(generics.ListAPIView):
-    queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+class FilialListAPIView(generics.ListAPIView):
+    queryset = Filial.objects.all()
+    serializer_class = FilialSerializer
 
 
-class LocationRetrieveAPIView(generics.RetrieveAPIView):
-    queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+class FilialRetrieveAPIView(generics.RetrieveAPIView):
+    queryset = Filial.objects.all()
+    serializer_class = FilialSerializer
 
 
 class ContactListAPIView(generics.ListAPIView):

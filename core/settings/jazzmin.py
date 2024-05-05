@@ -23,7 +23,7 @@ JAZZMIN_SETTINGS = {
     },
     "icons": {
         "vacancy.Vacancy": "fas fa-solid fa-briefcase",
-        "filial.Location": "fas fa-solid fa-map",
+        "filial.Filial": "fas fa-solid fa-map",
         "filial.Contact": "fas fa-solid fa-address-book",
         "courses.Review": "fas fa-solid fa-comment",
         "event.Event": "fas fa-solid fa-newspaper",

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Location, OperatingHours, Contact
+from .models import Filial, OperatingHours, Contact
 
 
 class OperatingHoursInline(admin.TabularInline):
@@ -7,8 +7,8 @@ class OperatingHoursInline(admin.TabularInline):
     extra = 6
 
 
-@admin.register(Location)
-class LocationAdmin(admin.ModelAdmin):
+@admin.register(Filial)
+class FilialAdmin(admin.ModelAdmin):
     list_display = ('address', 'phone_number')
     search_fields = ('address', 'phone_number')
     list_filter = ('address',)

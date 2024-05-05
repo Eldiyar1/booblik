@@ -4,7 +4,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from apps.filial.constants import DAY_CHOICES
 
 
-class Location(models.Model):
+class Filial(models.Model):
     logo = models.ImageField(
         upload_to='logos/',
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
@@ -16,8 +16,8 @@ class Location(models.Model):
     longitude = models.FloatField(verbose_name="Долгота")
 
     class Meta:
-        verbose_name = "Местоположение"
-        verbose_name_plural = "Местоположения"
+        verbose_name = "Филиал"
+        verbose_name_plural = "Филиалы"
 
     def __str__(self):
         return self.address
@@ -25,7 +25,7 @@ class Location(models.Model):
 
 class OperatingHours(models.Model):
     location = models.ForeignKey(
-        Location,
+        Filial,
         on_delete=models.CASCADE,
         related_name='operating_hours',
         verbose_name="Местоположение"
@@ -48,4 +48,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'WhatsApp контакт {self.whatsapp}'
-

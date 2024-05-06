@@ -1,15 +1,31 @@
 from django.contrib import admin
-from .models import Vacancy
+from .models import Vacancy, Duties, Requirements, Conditions
+
+
+class DutiesInline(admin.TabularInline):
+    model = Duties
+    max_num = 1
+
+
+class RequirementsInline(admin.TabularInline):
+    model = Requirements
+    max_num = 1
+
+
+class ConditionsInline(admin.TabularInline):
+    model = Conditions
+    max_num = 1
 
 
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'phone_number', 'address')
-    list_filter = ('address',)
+    list_display = ('title', 'address')
+    list_filter = ('address', 'title')
     search_fields = ('title', 'description', 'address')
+    inlines = [DutiesInline, RequirementsInline, ConditionsInline]
     fieldsets = [
         ('Русский перевод', {
-            'fields': ['title', 'description', 'phone_number', 'address']
+            'fields': ['title', 'description', 'address']
         }),
         ('Кыргызский перевод', {
             'fields': ['title_ky', 'description_ky']

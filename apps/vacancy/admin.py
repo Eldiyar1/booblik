@@ -19,8 +19,8 @@ class ConditionsInline(admin.TabularInline):
 
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'address')
-    list_filter = ('address', 'title')
+    list_display = ('title', 'address', 'created_at')  # Добавляем 'created_at' в список отображаемых полей
+    list_filter = ('address', 'title', 'created_at')
     search_fields = ('title', 'description', 'address')
     inlines = [DutiesInline, RequirementsInline, ConditionsInline]
     fieldsets = [

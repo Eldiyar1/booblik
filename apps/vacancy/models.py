@@ -7,7 +7,7 @@ class Vacancy(models.Model):
     title = models.CharField(max_length=255, verbose_name="Должность")
     description = models.TextField(verbose_name="Описание")
     address = models.ForeignKey(Filial, on_delete=models.CASCADE, verbose_name="Адресс")
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     class Meta:
         verbose_name = "Вакансия"
@@ -20,6 +20,8 @@ class Vacancy(models.Model):
 class Duties(models.Model):
     vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
     title = SummernoteTextField(max_length=255, verbose_name='Обязанности')
+    title_kgz = SummernoteTextField(max_length=255, verbose_name="Обязанности (KGZ)")
+    title_en = SummernoteTextField(max_length=255, verbose_name="Обязанности (EN)")
 
     class Meta:
         verbose_name = 'Обязанности'
@@ -32,6 +34,8 @@ class Duties(models.Model):
 class Requirements(models.Model):
     vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
     title = SummernoteTextField(max_length=255, verbose_name='Требования')
+    title_kgz = SummernoteTextField(max_length=255, verbose_name="Требования (KGZ)")
+    title_en = SummernoteTextField(max_length=255, verbose_name="Требования (EN)")
 
     class Meta:
         verbose_name = 'Требования'
@@ -44,6 +48,8 @@ class Requirements(models.Model):
 class Conditions(models.Model):
     vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
     title = SummernoteTextField(max_length=255, verbose_name='Условия')
+    title_kgz = SummernoteTextField(max_length=255, verbose_name="Условия (KGZ)")
+    title_en = SummernoteTextField(max_length=255, verbose_name="Условия (EN)")
 
     class Meta:
         verbose_name = 'Условия'

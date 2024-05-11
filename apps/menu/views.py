@@ -24,3 +24,8 @@ class ProductsByMenuAPIView(generics.ListAPIView):
     def get_queryset(self):
         menu_id = self.kwargs['menu_id']
         return Product.objects.filter(menu_id=menu_id)
+
+
+class BreakfastMenuProductsAPIView(generics.ListAPIView):
+    queryset = Product.objects.filter(menu__name="Завтраки")
+    serializer_class = ProductSerializer

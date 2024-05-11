@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from .env_reader import env
 from .jazzmin import *
+from .cors import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -39,8 +40,8 @@ INSTALLED_APPS = [*THEME_APPS, *DJANGO_APPS, *LIBRARY_APPS, *LOCAL_APPS]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",

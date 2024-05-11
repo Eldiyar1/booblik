@@ -23,7 +23,7 @@ def manage_events(action):
         elif action == 'remove':
             events = Event.objects.filter(removal_at__lte=now, is_published=True)
         else:
-            raise ValidationError('Invalid action. Action should be either "publish" or "remove".')
+            raise ValidationError('Недопустимое действие. Действие должно быть либо "опубликовать", либо "удалить".')
 
         handle_events(events, action)
         return "ok"

@@ -4,4 +4,4 @@ from .models import Vacancy
 
 @register(Vacancy)
 class VacancyTranslationOptions(TranslationOptions):
-    fields = ('title', 'description', 'phone_number', 'address')
+    fields = ('title', 'description')

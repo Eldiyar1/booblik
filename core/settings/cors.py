@@ -10,11 +10,11 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOW_HEADERS = [
-    "accept",
-    "accept-encoding",
-    "authorization",
-    "content-type",
-    "accept-language",
+    "Accept",
+    "Accept-Encoding",
+    "Authorization",
+    "Content-Type",
+    "Accept-Language",
     "dnt",
     "origin",
     "user-agent",
@@ -22,4 +22,4 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
-CORS_ALLOWED_ORIGINS = env("CORS_ALLOWED_ORIGINS", cast=csv())
+CORS_ALLOW_ALL_ORIGINS = True

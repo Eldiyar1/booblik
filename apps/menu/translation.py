@@ -9,4 +9,4 @@ class MenuTranslationOptions(TranslationOptions):
 
 @register(Product)
 class ProductTranslationOptions(TranslationOptions):
-    fields = ('title', 'description', 'image', 'price', 'recommended')
+    fields = ('title', 'description')

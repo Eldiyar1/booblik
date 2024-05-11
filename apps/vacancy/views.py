@@ -3,8 +3,9 @@ from rest_framework.response import Response
 from .tasks import send_resume_email
 from rest_framework.views import APIView
 from rest_framework import status, generics
-from .models import Vacancy
-from .serializers import VacancyListSerializer, VacancyDetailSerializer, ResumeSerializer
+from .models import Vacancy, Duties, Requirements, Conditions
+from .serializers import VacancyListSerializer, VacancyDetailSerializer, ResumeSerializer, DutiesSerializer, \
+    RequirementsSerializer, ConditionsSerializer
 
 
 class VacancyListView(generics.ListAPIView):
@@ -15,6 +16,21 @@ class VacancyListView(generics.ListAPIView):
 class VacancyDetailView(generics.RetrieveAPIView):
     queryset = Vacancy.objects.all()
     serializer_class = VacancyDetailSerializer
+
+
+class DutiesListAPI(generics.ListAPIView):
+    queryset = Duties.objects.all()
+    serializer_class = DutiesSerializer
+
+
+class RequirementsListAPI(generics.ListAPIView):
+    queryset = Requirements.objects.all()
+    serializer_class = RequirementsSerializer
+
+
+class ConditionsListAPI(generics.ListAPIView):
+    queryset = Conditions.objects.all()
+    serializer_class = ConditionsSerializer
 
 
 class SendResumeView(APIView):

@@ -15,6 +15,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/v1/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='docs'),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 

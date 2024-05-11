@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.vacancy.views import VacancyListView, VacancyDetailView, SendResumeView
+from apps.vacancy.views import VacancyListView, VacancyDetailView, SendResumeView, DutiesListAPI, RequirementsListAPI, ConditionsListAPI
 
 
 urlpatterns = [

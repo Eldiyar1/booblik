@@ -2,7 +2,7 @@ from django.core.validators import FileExtensionValidator
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
 
-from .models import Vacancy
+from .models import Vacancy, Duties, Requirements, Conditions
 from .validators import validate_file_size
 
 
@@ -15,7 +15,25 @@ class VacancyListSerializer(serializers.ModelSerializer):
 class VacancyDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
-        fields = ('id', 'title', 'description', 'phone_number', 'address')
+        fields = ('id', 'title', 'description', 'address')
+
+
+class DutiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Duties
+        fields = ('id', 'title')
+
+
+class RequirementsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Requirements
+        fields = ('id', 'title')
+
+
+class ConditionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Conditions
+        fields = ('id', 'title')
 
 
 class ResumeSerializer(serializers.Serializer):

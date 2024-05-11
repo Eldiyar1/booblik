@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class VacancyConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "apps.vacancy"
-    verbose_name = "Вакансии"
+    verbose_name = "3.Вакансии"

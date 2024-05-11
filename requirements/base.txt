@@ -15,6 +15,7 @@ django-filter==23.5
 django-jazzmin==2.6.0
 django-modeltranslation==0.18.11
 django-phonenumber-field==7.3.0
+django-summernote==0.8.20.0
 djangorestframework==3.14.0
 drf-spectacular==0.27.2
 flake8==7.0.0

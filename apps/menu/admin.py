@@ -22,12 +22,12 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'image', 'price', 'recommended', 'menu')
+    list_display = ('title', 'description', 'image', 'price', 'unit', 'menu')
     search_fields = ('title', 'description')
-    list_filter = ('recommended', 'menu')
+    list_filter = ('menu',)
     fieldsets = [
         ('Русский перевод', {
-            'fields': ['title', 'description', 'image', 'price', 'recommended', 'menu']
+            'fields': ['title', 'description', 'image', 'price', 'menu']
         }),
         ('Кыргызский перевод', {
             'fields': ['title_ky', 'description_ky']

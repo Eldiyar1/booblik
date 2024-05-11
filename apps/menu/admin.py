@@ -22,28 +22,17 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = (
-        'title', 'price', 'promotional_price', 'get_current_price', 'promotion_start_date', 'promotion_end_date',
-        'recommended', 'liters', 'menu')
+    list_display = ('title', 'description', 'image', 'price', 'recommended', 'menu')
     search_fields = ('title', 'description')
     list_filter = ('recommended', 'menu')
-
-    def get_current_price(self, obj):
-        return obj.current_price
-
-    get_current_price.short_description = 'Текущая цена'
-
     fieldsets = [
-        ('Основные данные', {
-            'fields': ['title', 'description', 'image', 'price', 'promotional_price', 'promotion_start_date',
-                       'promotion_end_date', 'recommended', 'liters', 'menu']
+        ('Русский перевод', {
+            'fields': ['title', 'description', 'image', 'price', 'recommended', 'menu']
         }),
         ('Кыргызский перевод', {
             'fields': ['title_ky', 'description_ky']
         }),
         ('Английский перевод', {
             'fields': ['title_en', 'description_en']
-        }),
+        })
     ]
-
-    readonly_fields = ['get_current_price']

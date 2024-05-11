@@ -17,3 +17,15 @@ class Event(models.Model):
 
     def __str__(self):
         return f'Событие от {self.publish_at.strftime("%H:%M %d-%m-%Y")}'
+
+
+class News(models.Model):
+    title = models.CharField(max_length=50, verbose_name="Название")
+    description = models.TextField(verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"

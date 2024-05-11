@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import Event
+from .models import Event, News
 
 
 def update_publish_status(modeladmin, request, queryset, status):
@@ -36,3 +36,20 @@ class EventAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ('media_file', 'publish_at', 'removal_at', 'is_published')}),
     )
+
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'description')
+    fieldsets = [
+        ('Русский перевод', {
+            'fields': ['title', 'description', ]
+        }),
+        ('Кыргызский перевод', {
+            'fields': ['title_ky', 'description_ky']
+        }),
+        ('Английский перевод', {
+            'fields': ['title_en', 'description_en']
+        }),
+    ]
+

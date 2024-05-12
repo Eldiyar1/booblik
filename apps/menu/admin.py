@@ -27,12 +27,12 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('menu',)
     fieldsets = [
         ('Русский перевод', {
-            'fields': ['title', 'description', 'image', 'price', 'menu']
+            'fields': ['title', 'description', 'image', 'price', 'unit', 'menu']
         }),
         ('Кыргызский перевод', {
-            'fields': ['title_ky', 'description_ky']
+            'fields': ['title_ky', 'description_ky', 'unit_ky']
         }),
         ('Английский перевод', {
-            'fields': ['title_en', 'description_en']
+            'fields': ['title_en', 'description_en', 'unit_en']
         })
     ]

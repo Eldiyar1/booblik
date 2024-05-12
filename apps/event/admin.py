@@ -27,7 +27,7 @@ class EventAdmin(admin.ModelAdmin):
 
     def media_preview(self, obj):
         if obj.media_file and obj.media_file.url.endswith(('jpg', 'jpeg', 'png')):
-            return format_html('<img src="{}" width="100" height="auto">', obj.media_file.url)
+            return format_html('<img src="{}" style="max-width: 100px; max-height: 100px; object-fit: cover;">', obj.media_file.url)
         elif obj.media_file and obj.media_file.url.endswith('pdf'):
             return format_html('<a href="{}" target="_blank">Просмотр PDF</a>', obj.media_file.url)
         return "Файл не поддерживается"
@@ -52,4 +52,3 @@ class NewsAdmin(admin.ModelAdmin):
             'fields': ['title_en', 'description_en']
         }),
     ]
-

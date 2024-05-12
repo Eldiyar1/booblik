@@ -9,12 +9,12 @@ class VacancyAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description', 'address')
     fieldsets = [
         ('Русский перевод', {
-            'fields': ['title', 'description', 'address', 'requirements']
+            'fields': ['title', 'address', 'requirements']
         }),
         ('Кыргызский перевод', {
-            'fields': ['title_ky', 'description_ky', 'requirements_ky']
+            'fields': ['title_ky', 'requirements_ky']
         }),
         ('Английский перевод', {
-            'fields': ['title_en', 'description_en', 'requirements_en']
+            'fields': ['title_en', 'requirements_en']
         }),
     ]

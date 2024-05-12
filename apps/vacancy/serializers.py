@@ -9,13 +9,13 @@ from .validators import validate_file_size
 class VacancyListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
-        fields = ('id', 'title', 'description')
+        fields = ('id', 'title', 'requirements', 'address', 'created_at')
 
 
 class VacancyDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
-        fields = ('id', 'title', 'description', 'address')
+        fields = ('id', 'requirements')
 
 
 class ResumeSerializer(serializers.Serializer):

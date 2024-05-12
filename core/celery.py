@@ -20,11 +20,6 @@ app.conf.beat_schedule = {
         'schedule': crontab(minute="*/1"),
         'args': ('remove',)
     },
-    'update_product_prices_every_midnight': {
-        'task': 'apps.menu.tasks.update_product_prices',
-        # 'schedule': crontab(minute=0, hour=0)
-        'schedule': crontab(minute="*/1")
-    },
 }
 
 

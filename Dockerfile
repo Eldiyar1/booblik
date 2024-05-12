@@ -10,6 +10,6 @@ COPY . .
 
 RUN pip install -r requirements/production.txt
 
-RUN python manage.py collectstatic
+RUN python manage.py collectstatic --noinput
 
 RUN python manage.py makemigrations

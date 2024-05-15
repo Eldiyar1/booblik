@@ -15,7 +15,7 @@ class FeedbackAPIView(APIView):
                 full_name=serializer.validated_data['full_name'],
                 phone_number=str(serializer.validated_data['phone_number']),
                 comment=serializer.validated_data['comment'],
-                filial=serializer.validated_data['filial_id'].id
+                filial_id=serializer.validated_data['filial_id'].id
             )
             return Response({"message": "Отзыв был успешно отправлен"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

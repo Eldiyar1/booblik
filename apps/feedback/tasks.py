@@ -9,10 +9,10 @@ email_sender = EmailSender()
 
 
 @shared_task
-def send_feedback_email(full_name, phone_number, comment, location_id):
+def send_feedback_email(full_name, phone_number, comment, filial_id):
     recipient_email = settings.EMAIL_HOST_USER
     try:
-        filial = Filial.objects.get(id=location_id)
+        filial = Filial.objects.get(id=filial_id)
     except Filial.DoesNotExist:
         return None
     context = {

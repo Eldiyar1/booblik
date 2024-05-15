@@ -14,16 +14,17 @@ class Menu(models.Model):
 
 class Product(models.Model):
     UNIT_CHOICES = (
-        ('г', 'Гр'),
-        ('мл', 'Мл'),
-        ('л', 'Л'),
+        ('Гр', 'Гр'),
+        ('Мл', 'Мл'),
+        ('Л', 'Л'),
     )
 
     title = models.CharField(max_length=50, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(upload_to='products/%Y/%m/%d/', verbose_name="Изображение")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
-    unit = models.CharField(max_length=2, choices=UNIT_CHOICES, blank=True, null=True, verbose_name="Единицы измерения")
+    volume = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name="Объем")
+    unit = models.CharField(max_length=2, choices=UNIT_CHOICES, verbose_name="Единицы измерения объема")
     menu = models.ForeignKey(Menu, models.CASCADE, related_name="products", verbose_name="Меню")
 
     def __str__(self):

@@ -1,5 +1,4 @@
 from django.db import models
-from django_summernote.fields import SummernoteTextField
 from django.core.validators import FileExtensionValidator
 
 
@@ -21,8 +20,13 @@ class Event(models.Model):
 
 
 class News(models.Model):
+    image = models.ImageField(
+        upload_to='filial/',
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
+        verbose_name="Изображение"
+    )
     title = models.CharField(max_length=50, verbose_name="Название")
-    description = SummernoteTextField(null=True, blank=True, verbose_name="Описание")
+    description = models.TextField(null=True, blank=True, verbose_name="Описание")
 
     def __str__(self):
         return self.title

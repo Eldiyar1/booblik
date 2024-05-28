@@ -35,8 +35,3 @@ class SendResumeView(APIView):
             )
             return Response({"message": "Резюме было успешно отправлено."}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class VacancyListBotView(generics.ListAPIView):
-    queryset = Vacancy.objects.all()
-    serializer_class = VacancyDetailSerializer

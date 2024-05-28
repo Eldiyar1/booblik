@@ -4,7 +4,7 @@ from .env_reader import env
 from .jazzmin import *
 from .cors import *
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 PRODUCTION = env("PRODUCTION", default=False, cast=bool)
 
@@ -111,6 +111,10 @@ LANGUAGES = [
     ("ru", gettext("Русский")),
     ("ky", gettext("Кыргызча")),
     ("en", gettext("English")),
+]
+
+LOCALE_PATHS = [
+    f"{BASE_DIR}/menu/locale",
 ]
 
 

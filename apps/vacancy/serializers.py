@@ -3,7 +3,7 @@ from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
 
 from .models import Vacancy
-from .validators import validate_file_size
+from apps.common.validators import validate_file_size
 
 
 class VacancyListSerializer(serializers.ModelSerializer):

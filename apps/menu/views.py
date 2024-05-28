@@ -1,4 +1,5 @@
-from rest_framework import generics
+from rest_framework import generics, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -6,16 +7,11 @@ from .serializers import ProductSerializer
 class ProductsListAPIView(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+    search_fields = ['title']
+    filterset_fields = ['menu']
 
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
-
-class ProductsByMenuAPIView(generics.ListAPIView):
-    serializer_class = ProductSerializer
-
-    def get_queryset(self):
-        menu_id = self.kwargs['menu_id']
-        return Product.objects.filter(menu_id=menu_id)

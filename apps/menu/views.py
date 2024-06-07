@@ -5,7 +5,7 @@ from .serializers import ProductSerializer
 
 
 class ProductsListAPIView(generics.ListAPIView):
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().select_related('menu')
     serializer_class = ProductSerializer
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['title']

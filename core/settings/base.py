@@ -4,7 +4,7 @@ from .env_reader import env
 from .jazzmin import *
 from .cors import *
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 PRODUCTION = env("PRODUCTION", default=False, cast=bool)
 
